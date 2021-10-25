@@ -1,0 +1,17 @@
+      .datos {
+        width: 700px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .card {
+        margin: 10px;
+        width: 150px;
+        height: 250px;
+        background-color: blue;
+        padding: 10px;
+      }
+      .img-card {
+        width: 100%;
+      }
