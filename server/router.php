@@ -3,7 +3,7 @@ function router($method, $url, $closure) {
     //Request uri trae la uri actual
 	$route = $_SERVER['REQUEST_URI'];
     //Se elimina todo lo que no es la uri base para usar url's relativas
-    $route = str_replace("sdm/server/", "", $route);
+    $route = str_replace("github/Sol-de-Mayo/server/", "", $route);
 	if (strpos($route, '?')) {
 		$route = strstr($route, '?', true);
 	}

@@ -9,7 +9,19 @@
   </head>
   <body>
     <button type="button" class="button">Retrieve data from api</button>
-    <input type="search" name="search_bar" placeholder="buscar...">
+    
+    <select class="select_area">
+      <option value="">Todas</option>
+      <option value="1">Escolar</option>
+      <option value="2">Tecnica</option>
+    </select>
+    <select class="select_categoria">
+      <option value="">Todos</option>
+      <option value="1">Lapices</option>
+      <option value="2">Gomas</option>
+    </select>
+
+    <input type="search" name="search_bar" class="search_bar" placeholder="buscar...">
     <div id="datos" class="datos"></div>
   </body>
   <script type="text/javascript" src="js/main.js"></script>
