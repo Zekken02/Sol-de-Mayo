@@ -15,6 +15,12 @@
       <option value="1">Escolar</option>
       <option value="2">Tecnica</option>
     </select>
+    <select class="select_marca">
+      <option value="">Todas</option>
+      <option value="1">Bic</option>
+      <option value="2">FaberCastell</option>
+      <option value="3">Plantec</option>
+    </select>
     <select class="select_categoria">
       <option value="">Todos</option>
       <option value="1">Lapices</option>

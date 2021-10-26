@@ -4,9 +4,16 @@ search_bar = document.querySelector(".search_bar");
 search = document.querySelector(".search_bar").value;
 select_area = document.querySelector(".select_area");
 area = document.querySelector(".select_area").value;
+select_marca = document.querySelector(".select_marca");
+marca = document.querySelector(".select_marca").value;
 
 select_area.addEventListener('change', function(){
   area = document.querySelector(".select_area").value;
+  retrieveData()
+})
+
+select_marca.addEventListener('change', function(){
+  marca = document.querySelector(".select_marca").value;
   retrieveData()
 })
 
@@ -37,6 +44,13 @@ function retrieveData () {
                 console.log(data);
               } else{}
 
+               if (marca !== "") {
+                data = data.filter(function(items){
+                return (items.id_marca == marca);
+                });
+                console.log(data);
+              } else{}
+
               if (categoria !== "") {
                 data = data.filter(function(items){
                 return (items.id_categoria == categoria);
@@ -46,7 +60,7 @@ function retrieveData () {
 
               if (search !== "") {
                 data = data.filter(function(items){
-                return items.descripcion.toLowerCase().indexOf(search.toLowerCase()) > -1;
+                return items.nombre.toLowerCase().indexOf(search.toLowerCase()) > -1;
                 });
                 console.log(data);
               } else{}
@@ -61,6 +75,8 @@ function retrieveData () {
               nombre.innerText = producto.nombre;
               const descripcion = document.createElement("h3");
               descripcion.innerText = producto.descripcion;
+              const marca = document.createElement("h3");
+              marca.innerText = producto.n_marca;
               const precio = document.createElement("p");
               precio.innerText = "precio: " + "$" + producto.precio;
               const stock = document.createElement("p");
@@ -68,6 +84,7 @@ function retrieveData () {
               div.appendChild(img);
               div.appendChild(nombre);
               div.appendChild(descripcion);
+              div.appendChild(marca);
               div.appendChild(precio);
               div.appendChild(stock);
               divDatos.appendChild(div);
