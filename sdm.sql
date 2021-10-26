@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-10-2021 a las 01:52:53
--- Versión del servidor: 10.1.38-MariaDB
--- Versión de PHP: 7.3.4
+-- Tiempo de generación: 27-10-2021 a las 00:38:31
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -107,12 +106,13 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `foto`, `precio`, `stock`, `id_proveedor`, `id_categoria`, `id_marca`, `id_area`) VALUES
-(1, 'Lapiz', 'Lapiz HB Bic', '', 30, 30, 1, 1, 1, 1),
-(2, 'Lapiz', 'Lapiz HB FaberCastell', '', 220, 15, 1, 1, 2, 2),
-(3, 'Lapiz', 'Lapiz 2B FaberCastell', '', 220, 15, 1, 1, 2, 2),
-(4, 'Lapiz', 'Lapiz 2H FaberCastell', '', 220, 15, 1, 1, 2, 2),
-(5, 'Lapiz', 'Lapiz HB Plantec', '', 50, 15, 1, 1, 3, 2),
-(6, 'Goma', 'Goma blanca FaberCastell', '', 60, 30, 1, 2, 2, 1);
+(1, 'Lapiz HB', '...', '', 30, 30, 1, 1, 1, 1),
+(2, 'Lapiz HB', '...', '', 220, 15, 1, 1, 2, 2),
+(3, 'Lapiz 2B', '...', '', 220, 15, 1, 1, 2, 2),
+(4, 'Lapiz 2H', '...', '', 220, 15, 1, 1, 2, 2),
+(5, 'Lapiz HB', '...', '', 50, 15, 1, 1, 3, 2),
+(6, 'Goma blanca', '...', '', 60, 30, 1, 2, 2, 1),
+(7, 'Goma blanca', '...', '', 100, 35, 1, 2, 3, 2);
 
 --
 -- Índices para tablas volcadas
@@ -168,7 +168,7 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

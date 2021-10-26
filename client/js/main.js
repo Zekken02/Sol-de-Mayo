@@ -1,32 +1,45 @@
+// llamamos al select con la clase "select_categoria" y tomamos su valor
 select_categoria = document.querySelector(".select_categoria");
 categoria = document.querySelector(".select_categoria").value;
+
+// llamamos al input con la clase "search_bar" y tomamos su valor
 search_bar = document.querySelector(".search_bar");
 search = document.querySelector(".search_bar").value;
+
+// llamamos al select con la clase "select_area" y tomamos su valor
 select_area = document.querySelector(".select_area");
 area = document.querySelector(".select_area").value;
+
+// llamamos al select con la clase "select_marca" y tomamos su valor
 select_marca = document.querySelector(".select_marca");
 marca = document.querySelector(".select_marca").value;
 
+
+// actualizar funcion cuando cambia el contenido de "select_area"
 select_area.addEventListener('change', function(){
   area = document.querySelector(".select_area").value;
   retrieveData()
 })
 
+// actualizar funcion cuando cambia el contenido de "select_marca"
 select_marca.addEventListener('change', function(){
   marca = document.querySelector(".select_marca").value;
   retrieveData()
 })
 
+// actualizar funcion cuando cambia el contenido de "select_categoria"
 select_categoria.addEventListener('change', function(){
   categoria = document.querySelector(".select_categoria").value;
   retrieveData()
 })
 
+// actualizar funcion cuando cambia el contenido de "search_bar"
 search_bar.addEventListener('input', function(){
   search = document.querySelector(".search_bar").value;
   retrieveData()
 })
 
+// funcion que crea las tarjetas de productos
 function retrieveData () {
           fetch("http://localhost/github/Sol-de-Mayo/server/productos")
           .then((res) => res.json())
@@ -37,6 +50,7 @@ function retrieveData () {
               const divDatos = document.getElementById("datos");
               divDatos.innerHTML="";
               
+              // filtra el area
               if (area !== "") {
                 data = data.filter(function(items){
                 return (items.id_area == area);
@@ -44,13 +58,15 @@ function retrieveData () {
                 console.log(data);
               } else{}
 
-               if (marca !== "") {
+              // filtra la marca
+              if (marca !== "") {
                 data = data.filter(function(items){
                 return (items.id_marca == marca);
                 });
                 console.log(data);
               } else{}
 
+              // filtra la categoria
               if (categoria !== "") {
                 data = data.filter(function(items){
                 return (items.id_categoria == categoria);
@@ -58,6 +74,7 @@ function retrieveData () {
                 console.log(data);
               } else{}
 
+              // filtra la barra d busqueda
               if (search !== "") {
                 data = data.filter(function(items){
                 return items.nombre.toLowerCase().indexOf(search.toLowerCase()) > -1;
@@ -65,6 +82,7 @@ function retrieveData () {
                 console.log(data);
               } else{}
 
+              // si no puede traer ningun producto de la base de datos muestra un mensaje
               if (data.length == 0) {
                 const div_non_result = document.createElement("div");
                 const non_result = document.createElement("p");
