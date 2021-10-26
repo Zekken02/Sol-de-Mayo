@@ -64,7 +64,16 @@ function retrieveData () {
                 });
                 console.log(data);
               } else{}
-            
+
+              if (data.length == 0) {
+                const div_non_result = document.createElement("div");
+                const non_result = document.createElement("p");
+                non_result.innerText = "Lo sentimos, no encontramos resultados para su busqueda...";
+                div_non_result.appendChild(non_result);
+                divDatos.appendChild(div_non_result);
+                console.log(non_result);
+              }else{}
+
               data.map((producto => {
               const div = document.createElement("div");
               div.className += "card"; 
