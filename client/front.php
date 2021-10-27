@@ -10,35 +10,31 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
+    <div id="filtros" class="filtros">
+      <!--========== SELECT PARA AREA DE PRODUCTO ============-->
+      <div id="filter_area" class="filter_area">
+        <input type="radio" value="" name="area" class="select_area" id="area0" checked="checked">
+        <label for="area0">Todas</label>
+      </div>
 
-    <!--========== BOTON DE PRUEBA (BORRABLE) ============-->
-    <button type="button" class="button">Retrieve data from api</button>
-    
-    <!--========== SELECT PARA AREA DE PRODUCTO ============-->
-    <select class="select_area">
-      <option value="">Todas</option>
-      <option value="1">Escolar</option>
-      <option value="2">Tecnica</option>
-    </select>
+      <!--========== SELECT PARA MARCA DE PRODUCTO ============-->
+      <select class="select_marca">
+        <option value="">Todas</option>
+        <option value="1">Bic</option>
+        <option value="2">FaberCastell</option>
+        <option value="3">Plantec</option>
+      </select>
 
-    <!--========== SELECT PARA MARCA DE PRODUCTO ============-->
-    <select class="select_marca">
-      <option value="">Todas</option>
-      <option value="1">Bic</option>
-      <option value="2">FaberCastell</option>
-      <option value="3">Plantec</option>
-    </select>
+      <!--========== SELECT PARA CATEGORIA DE PRODUCTO ============-->
+      <select class="select_categoria">
+        <option value="">Todos</option>
+        <option value="1">Lapices</option>
+        <option value="2">Gomas</option>
+      </select>
 
-    <!--========== SELECT PARA CATEGORIA DE PRODUCTO ============-->
-    <select class="select_categoria">
-      <option value="">Todos</option>
-      <option value="1">Lapices</option>
-      <option value="2">Gomas</option>
-    </select>
-
-    <!--========== INPUT BARRA DE BUSQUEDA ============-->
-    <input type="search" name="search_bar" class="search_bar" placeholder="buscar...">
-
+      <!--========== INPUT BARRA DE BUSQUEDA ============-->
+      <input type="search" name="search_bar" class="search_bar" placeholder="buscar...">
+    </div>
     <!--========== DIV QUE CONTIENE LAS TARJETAS ============-->
     <div id="datos" class="datos"></div>
   </body>

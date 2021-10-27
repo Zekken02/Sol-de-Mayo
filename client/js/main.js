@@ -1,46 +1,68 @@
-// llamamos al select con la clase "select_categoria" y tomamos su valor
-select_categoria = document.querySelector(".select_categoria");
-categoria = document.querySelector(".select_categoria").value;
+              // llamamos al select con la clase "select_categoria" y tomamos su valor
+              select_categoria = document.querySelector(".select_categoria");
+              categoria = document.querySelector(".select_categoria").value;
 
-// llamamos al input con la clase "search_bar" y tomamos su valor
-search_bar = document.querySelector(".search_bar");
-search = document.querySelector(".search_bar").value;
+              // llamamos al select con la clase "select_marca" y tomamos su valor
+              select_marca = document.querySelector(".select_marca");
+              marca = document.querySelector(".select_marca").value;
 
-// llamamos al select con la clase "select_area" y tomamos su valor
-select_area = document.querySelector(".select_area");
-area = document.querySelector(".select_area").value;
+              // llamamos al input con la clase "search_bar" y tomamos su valor
+              search_bar = document.querySelector(".search_bar");
+              search = document.querySelector(".search_bar").value;
 
-// llamamos al select con la clase "select_marca" y tomamos su valor
-select_marca = document.querySelector(".select_marca");
-marca = document.querySelector(".select_marca").value;
+              // actualizar funcion cuando cambia el contenido de "select_categoria"
+              select_categoria.addEventListener('change', function(){
+                categoria = document.querySelector(".select_categoria").value;
+                tarjetas_productos()
+              })
 
+              // actualizar funcion cuando cambia el contenido de "select_marca"
+              select_marca.addEventListener('change', function(){
+                marca = document.querySelector(".select_marca").value;
+                tarjetas_productos()
+              })
 
-// actualizar funcion cuando cambia el contenido de "select_area"
-select_area.addEventListener('change', function(){
-  area = document.querySelector(".select_area").value;
-  retrieveData()
-})
+                // actualizar funcion cuando cambia el contenido de "search_bar"
+              search_bar.addEventListener('input', function(){
+                search = document.querySelector(".search_bar").value;
+                tarjetas_productos()
+              })
 
-// actualizar funcion cuando cambia el contenido de "select_marca"
-select_marca.addEventListener('change', function(){
-  marca = document.querySelector(".select_marca").value;
-  retrieveData()
-})
+// funcion que crea los filtros
+function filtros_areas() {
+          fetch("http://localhost/github/Sol-de-Mayo/server/areas")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data);
+              // data = data[0];
+              // console.log(data);
+              const divFilterArea = document.getElementById("filter_area");
 
-// actualizar funcion cuando cambia el contenido de "select_categoria"
-select_categoria.addEventListener('change', function(){
-  categoria = document.querySelector(".select_categoria").value;
-  retrieveData()
-})
+              data.map((area => {
+              const i_area = document.createElement("input");
+              i_area.type = "radio";
+              i_area.value = area.id;
+              i_area.name = "area";
+              i_area.className = "select_area";
+              i_area.id = "area" + area.id;
+              const l_area = document.createElement("label");
+              l_area.htmlFor = "area" + area.id;
+              l_area.innerHTML = area.n_area;
 
-// actualizar funcion cuando cambia el contenido de "search_bar"
-search_bar.addEventListener('input', function(){
-  search = document.querySelector(".search_bar").value;
-  retrieveData()
-})
+              divFilterArea.appendChild(i_area);
+              divFilterArea.appendChild(l_area);
+              }))
+              // llamamos al select con la clase "select_area" y tomamos su valor
+              select_area = document.querySelectorAll('input[name="area"]');
+              area = document.querySelector('input[name="area"]:checked').value;
+
+              // actualizar funcion cuando cambia el contenido de "select_area"
+              select_area.forEach(radio => radio.addEventListener('change', () => {area=radio.value, tarjetas_productos()}));
+            });       
+};
 
 // funcion que crea las tarjetas de productos
-function retrieveData () {
+function tarjetas_productos() {
           fetch("http://localhost/github/Sol-de-Mayo/server/productos")
           .then((res) => res.json())
           .then((data) => {
@@ -119,10 +141,7 @@ function retrieveData () {
             });
         };
       document.addEventListener("DOMContentLoaded", function (event) {
-        retrieveData(); 
-         const button = document.querySelector(".button");
-         button.addEventListener("click", () => {
-           retrieveData();
-         });
+        filtros_areas()
+        tarjetas_productos()
         //Las peticiones se hacen a la uri del server segun las rutas definidas        
       });
