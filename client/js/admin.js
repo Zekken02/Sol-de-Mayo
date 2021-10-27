@@ -50,7 +50,7 @@ function filtros_areas() {
               data.map((area => {
               const o_area = document.createElement("option");
               o_area.value = area.id;
-              o_area.innerText = area.n_area
+              o_area.innerText = area.n_area;
 
               divFilterArea.appendChild(o_area);
               divAddArea.appendChild(o_area);
@@ -71,7 +71,7 @@ function filtros_categorias() {
               data.map((categoria => {
               const o_categoria = document.createElement("option");
               o_categoria.value = categoria.id;
-              o_categoria.innerText = categoria.tipo
+              o_categoria.innerText = categoria.tipo;
 
               divFilterCategoria.appendChild(o_categoria);
               divAddCategoria.appendChild(o_categoria);
@@ -92,7 +92,7 @@ function filtros_marcas() {
               data.map((marca => {
               const o_marca = document.createElement("option");
               o_marca.value = marca.id;
-              o_marca.innerText = marca.n_marca
+              o_marca.innerText = marca.n_marca;
 
               divFilterMarca.appendChild(o_marca);
               divAddMarca.appendChild(o_marca);
