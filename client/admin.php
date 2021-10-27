@@ -60,7 +60,7 @@
                   <br>
                 </div>
                 <div class="col-12">
-                  <button class="btn btn-primary btn_cargar" value="cargar" name="cargar">Cargar</button>
+                  <button class="btn btn-primary btn_cargar" value="añadir" name="añadir">Añadir</button>
                 </div>                
             </div>
           </form>
