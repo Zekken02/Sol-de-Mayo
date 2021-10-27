@@ -1,34 +1,14 @@
-              // llamamos al select con la clase "select_categoria" y tomamos su valor
-              select_categoria = document.querySelector(".select_categoria");
-              categoria = document.querySelector(".select_categoria").value;
+// llamamos al input con la clase "search_bar" y tomamos su valor
+search_bar = document.querySelector(".search_bar");
+search = document.querySelector(".search_bar").value;
 
-              // llamamos al select con la clase "select_marca" y tomamos su valor
-              select_marca = document.querySelector(".select_marca");
-              marca = document.querySelector(".select_marca").value;
+// actualizar funcion cuando cambia el contenido de "search_bar"
+search_bar.addEventListener('input', function(){
+  search = document.querySelector(".search_bar").value;
+  tarjetas_productos()
+})
 
-              // llamamos al input con la clase "search_bar" y tomamos su valor
-              search_bar = document.querySelector(".search_bar");
-              search = document.querySelector(".search_bar").value;
-
-              // actualizar funcion cuando cambia el contenido de "select_categoria"
-              select_categoria.addEventListener('change', function(){
-                categoria = document.querySelector(".select_categoria").value;
-                tarjetas_productos()
-              })
-
-              // actualizar funcion cuando cambia el contenido de "select_marca"
-              select_marca.addEventListener('change', function(){
-                marca = document.querySelector(".select_marca").value;
-                tarjetas_productos()
-              })
-
-                // actualizar funcion cuando cambia el contenido de "search_bar"
-              search_bar.addEventListener('input', function(){
-                search = document.querySelector(".search_bar").value;
-                tarjetas_productos()
-              })
-
-// funcion que crea los filtros
+// funcion que crea los filtros de areas
 function filtros_areas() {
           fetch("http://localhost/github/Sol-de-Mayo/server/areas")
           .then((res) => res.json())
@@ -52,12 +32,78 @@ function filtros_areas() {
               divFilterArea.appendChild(i_area);
               divFilterArea.appendChild(l_area);
               }))
-              // llamamos al select con la clase "select_area" y tomamos su valor
+              // llamamos al input por su name y tomamos su valor
               select_area = document.querySelectorAll('input[name="area"]');
               area = document.querySelector('input[name="area"]:checked').value;
 
               // actualizar funcion cuando cambia el contenido de "select_area"
               select_area.forEach(radio => radio.addEventListener('change', () => {area=radio.value, tarjetas_productos()}));
+            });       
+};
+
+// funcion que crea los filtros de categorias
+function filtros_categorias() {
+          fetch("http://localhost/github/Sol-de-Mayo/server/categorias")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data);
+              // data = data[0];
+              // console.log(data);
+              const divFilterCategoria = document.getElementById("filter_categoria");
+
+              data.map((categoria => {
+              const i_categoria = document.createElement("input");
+              i_categoria.type = "radio";
+              i_categoria.value = categoria.id;
+              i_categoria.name = "categoria";
+              i_categoria.className = "select_categoria";
+              i_categoria.id = "categoria" + categoria.id;
+              const l_categoria = document.createElement("label");
+              l_categoria.htmlFor = "categoria" + categoria.id;
+              l_categoria.innerHTML = categoria.tipo;
+
+              divFilterCategoria.appendChild(i_categoria);
+              divFilterCategoria.appendChild(l_categoria);
+              }))
+              // llamamos al input por su name y tomamos su valor
+              select_categoria = document.querySelectorAll('input[name="categoria"]');
+              categoria = document.querySelector('input[name="categoria"]:checked').value;
+
+              // actualizar funcion cuando cambia el contenido de "select_area"
+              select_categoria.forEach(radio => radio.addEventListener('change', () => {categoria=radio.value, tarjetas_productos()}));
+            });       
+};
+
+// funcion que crea los filtros de marcas
+function filtros_marcas() {
+          fetch("http://localhost/github/Sol-de-Mayo/server/marcas")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data);
+              // data = data[0];
+              // console.log(data);
+              const divFilterMarca = document.getElementById("filter_marca");
+
+              data.map((marca => {
+              const i_marca = document.createElement("input");
+              i_marca.type = "radio";
+              i_marca.value = marca.id;
+              i_marca.name = "marca";
+              i_marca.className = "select_marca";
+              i_marca.id = "marca" + marca.id;
+              const l_marca = document.createElement("label");
+              l_marca.htmlFor = "marca" + marca.id;
+              l_marca.innerHTML = marca.n_marca;
+
+              divFilterMarca.appendChild(i_marca);
+              divFilterMarca.appendChild(l_marca);
+              }))
+              // llamamos al input por su name y tomamos su valor
+              select_marca = document.querySelectorAll('input[name="marca"]');
+              marca = document.querySelector('input[name="marca"]:checked').value;
+
+              // actualizar funcion cuando cambia el contenido de "select_area"
+              select_marca.forEach(radio => radio.addEventListener('change', () => {marca=radio.value, tarjetas_productos()}));
             });       
 };
 
@@ -142,6 +188,8 @@ function tarjetas_productos() {
         };
       document.addEventListener("DOMContentLoaded", function (event) {
         filtros_areas()
+        filtros_categorias()
+        filtros_marcas()
         tarjetas_productos()
         //Las peticiones se hacen a la uri del server segun las rutas definidas        
       });

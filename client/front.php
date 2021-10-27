@@ -7,30 +7,29 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <script src="https://kit.fontawesome.com/aa00e73738.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
+    <?php include 'navbar.php' ?>
     <div id="filtros" class="filtros">
-      <!--========== SELECT PARA AREA DE PRODUCTO ============-->
+      <!--========== INPUTS PARA AREA DE PRODUCTO ============-->
       <div id="filter_area" class="filter_area">
         <input type="radio" value="" name="area" class="select_area" id="area0" checked="checked">
         <label for="area0">Todas</label>
       </div>
 
-      <!--========== SELECT PARA MARCA DE PRODUCTO ============-->
-      <select class="select_marca">
-        <option value="">Todas</option>
-        <option value="1">Bic</option>
-        <option value="2">FaberCastell</option>
-        <option value="3">Plantec</option>
-      </select>
+      <!--========== INPUTS PARA CATEGORIA DE PRODUCTO ============-->
+      <div id="filter_categoria" class="filter_categoria">
+        <input type="radio" value="" name="categoria" class="select_categoria" id="categoria0" checked="checked">
+        <label for="categoria0">Todas</label>
+      </div>
 
-      <!--========== SELECT PARA CATEGORIA DE PRODUCTO ============-->
-      <select class="select_categoria">
-        <option value="">Todos</option>
-        <option value="1">Lapices</option>
-        <option value="2">Gomas</option>
-      </select>
+      <!--========== INPUTS PARA MARCA DE PRODUCTO ============-->
+      <div id="filter_marca" class="filter_marca">
+        <input type="radio" value="" name="marca" class="select_marca" id="marca0" checked="checked">
+        <label for="marca0">Todas</label>
+      </div>
 
       <!--========== INPUT BARRA DE BUSQUEDA ============-->
       <input type="search" name="search_bar" class="search_bar" placeholder="buscar...">
@@ -38,5 +37,5 @@
     <!--========== DIV QUE CONTIENE LAS TARJETAS ============-->
     <div id="datos" class="datos"></div>
   </body>
-  <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/productos.js"></script>
 </html>

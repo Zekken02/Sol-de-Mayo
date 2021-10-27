@@ -1,20 +1,89 @@
-.datos {
-  width: 700px;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*=========== NAV BAR =============*/
+
+nav{
+  background: black;
+  color: white;
+  display: flex!important;
+  justify-content: space-between;
+}
+
+nav .mainMenu {
   display: flex;
-  flex-direction: row;
- justify-content: space-around;
-  flex-wrap: wrap;
+  list-style: none;
 }
-.card {
-  margin: 10px;
-  width: 150px;
-  height: 250px;
-  background-color: blue;
+nav .mainMenu li a{
+  display: inline-block;
   padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5rem;
 }
-.img-card {
-  width: 100%;
+nav .mainMenu li a:hover{
+  background: rgb(255,94,0);
 }
+nav .openMenu{
+  font-size:1.5rem;
+  margin: 20px;
+  display: none;
+  cursor: pointer;
+}
+nav .mainMenu .closeMenu, .icons i{
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+.fa-facebook:hover{ color: rgb(255,94,0); font-size: 25px;}
+.fa-instagram:hover{ color: rgb(255,94,0); font-size: 25px;}
+.fa-twitter:hover{ color: rgb(255,94,0); font-size: 25px;}
+.fa-github:hover{ color: rgb(255,94,0); font-size: 25px;}
+nav .logo{
+  margin: 6px;
+  font-size: 25px;
+  cursor: pointer;
+}
+@media(max-width: 800px){
+  nav .mainMenu{
+    height: 100vh;
+    position: fixed;
+    top: -100%;
+    right: 0;
+    left: -5%;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    transition: 1s;
+    display: flex;
+  }
+  nav .mainMenu .closeMenu{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  nav .openMenu{
+    display: block;
+  }
+  nav .mainMenu li a:hover{
+    background: none;
+    color:rgb(255,94,0);
+    font-size: 25px;
+  }
+  .icons i{
+    display: inline-block;
+    padding: 12px;
+  }
+}
+
+/*=========== FILTROS =============*/
 input[type="radio"]{
   display: none;
 }
