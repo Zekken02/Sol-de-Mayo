@@ -51,9 +51,12 @@ function filtros_areas() {
               const o_area = document.createElement("option");
               o_area.value = area.id;
               o_area.innerText = area.n_area;
+              const z_area = document.createElement("option");
+              z_area.value = area.id;
+              z_area.innerText = area.n_area;
 
               divFilterArea.appendChild(o_area);
-              divAddArea.appendChild(o_area);
+              divAddArea.appendChild(z_area);
               }))
             });       
 };
@@ -72,9 +75,12 @@ function filtros_categorias() {
               const o_categoria = document.createElement("option");
               o_categoria.value = categoria.id;
               o_categoria.innerText = categoria.tipo;
+              const z_categoria = document.createElement("option");
+              z_categoria.value = categoria.id;
+              z_categoria.innerText = categoria.tipo;
 
               divFilterCategoria.appendChild(o_categoria);
-              divAddCategoria.appendChild(o_categoria);
+              divAddCategoria.appendChild(z_categoria);
               }))
             });       
 };
@@ -93,9 +99,12 @@ function filtros_marcas() {
               const o_marca = document.createElement("option");
               o_marca.value = marca.id;
               o_marca.innerText = marca.n_marca;
+              const z_marca = document.createElement("option");
+              z_marca.value = marca.id;
+              z_marca.innerText = marca.n_marca;
 
               divFilterMarca.appendChild(o_marca);
-              divAddMarca.appendChild(o_marca);
+              divAddMarca.appendChild(z_marca);
               }))
             });       
 };

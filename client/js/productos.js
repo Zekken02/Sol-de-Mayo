@@ -1,3 +1,12 @@
+              select_area = document.querySelectorAll('input[name="area"]');
+              area = document.querySelector('input[name="area"]:checked').value;
+
+              select_categoria = document.querySelectorAll('input[name="categoria"]');
+              categoria = document.querySelector('input[name="categoria"]:checked').value;
+
+              select_marca = document.querySelectorAll('input[name="marca"]');
+              marca = document.querySelector('input[name="marca"]:checked').value;
+
 // llamamos al input con la clase "search_bar" y tomamos su valor
 search_bar = document.querySelector(".search_bar");
 search = document.querySelector(".search_bar").value;
