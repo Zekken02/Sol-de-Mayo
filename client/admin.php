@@ -14,5 +14,5 @@
     <?php include 'navbar.php' ?>
     
   </body>
-  <script type="text/javascript" src="js/prod_admin.js"></script>
+  <script type="text/javascript" src="js/.js"></script>
 </html>

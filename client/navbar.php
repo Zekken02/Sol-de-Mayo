@@ -4,9 +4,8 @@
 	<ul class="mainMenu">
 		<li><a href="#">Noticias</a></li>
 		<li><a href="front.php">Productos</a></li>
-		<li><a href="prod_admin.php">Administrar productos</a></li>
 		<li><a href="#">Modulos</a></li>
-		<li><a href="#">Administrar modulos</a></li>
+		<li><a href="admin.php">Administrar</a></li>
 		<li><a href="#">Contactos</a></li>
 		<li><a href="#">Sobre nosotros</a></li>
 		<div class="closeMenu"><i class="fa fa-times"></i></div>
