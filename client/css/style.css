@@ -3,17 +3,7 @@
   margin: 0;
   padding: 0;
 }
-.prod_list{
-  width: 100%!important;
-  height: 400px;
-  overflow-x: scroll;
-  overflow-y: scroll;
-}
-.btn_cargar{
-  width: 100%!important;
-}
 /*=========== NAV BAR =============*/
-
 nav{
   height: 45px;
   background: black;
@@ -36,7 +26,7 @@ nav .mainMenu li a{
   font-size: 15px;
 }
 nav .mainMenu li a:hover{
-  background: rgb(255,94,0);
+  background: #8CA4F0;
 }
 nav .openMenu{
   font-size: 15px;
@@ -49,13 +39,14 @@ nav .mainMenu .closeMenu, .icons i{
   display: none;
   cursor: pointer;
 }
-.fa-facebook:hover{ color: rgb(255,94,0); font-size: 25px;}
-.fa-instagram:hover{ color: rgb(255,94,0); font-size: 25px;}
-.fa-twitter:hover{ color: rgb(255,94,0); font-size: 25px;}
-.fa-github:hover{ color: rgb(255,94,0); font-size: 25px; }
+.fa-facebook:hover{ padding: 10px; background: white; border-radius: 50%; color: #8CA4F0; font-size: 25px;}
+.fa-instagram:hover{ padding: 10px; background: white; border-radius: 50%; color: #8CA4F0; font-size: 25px;}
+.fa-twitter:hover{ padding: 10px; background: white; border-radius: 50%; color: #8CA4F0; font-size: 25px;}
+.fa-github:hover{ padding: 10px; background: white; border-radius: 50%; color: #8CA4F0; font-size: 25px; }
 .fa-bars{ font-size: 25px;}
 nav .logo h1{
   margin: 6px;
+  color: #F0ED8C;
   font-size: 25px;
   cursor: pointer;
 }
@@ -88,7 +79,7 @@ nav .logo h1{
 }
   nav .mainMenu li a:hover{
     background: none;
-    color:rgb(255,94,0);
+    color:#8CA4F0;
     font-size: 25px;
   }
   .icons i{
@@ -108,4 +99,24 @@ label{
 }
 input[type="radio"]:checked + label{
 color: darkblue;
+}
+
+/*=========== FORM =============*/
+.prod_list{
+  width: 100%!important;
+  height: 400px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+.btn_cargar{
+  width: 100%!important;
+}
+
+.container-fluid h2{
+  background: #8CA4F0;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
 }
