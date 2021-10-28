@@ -15,10 +15,12 @@
 /*=========== NAV BAR =============*/
 
 nav{
+  height: 45px;
   background: black;
   color: white;
   display: flex!important;
   justify-content: space-between;
+
 }
 
 nav .mainMenu {
@@ -27,31 +29,32 @@ nav .mainMenu {
 }
 nav .mainMenu li a{
   display: inline-block;
-  padding: 10px;
+  padding: 15px;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
-  font-size: 1.2rem;
+  font-size: 15px;
 }
 nav .mainMenu li a:hover{
   background: rgb(255,94,0);
 }
 nav .openMenu{
-  font-size:1.2rem;
-  margin: 20px;
+  font-size: 15px;
+  margin: 10px;
   display: none;
   cursor: pointer;
 }
 nav .mainMenu .closeMenu, .icons i{
-  font-size: 1.2rem;
+  font-size: 25px;
   display: none;
   cursor: pointer;
 }
 .fa-facebook:hover{ color: rgb(255,94,0); font-size: 25px;}
 .fa-instagram:hover{ color: rgb(255,94,0); font-size: 25px;}
 .fa-twitter:hover{ color: rgb(255,94,0); font-size: 25px;}
-.fa-github:hover{ color: rgb(255,94,0); font-size: 25px;}
-nav .logo{
+.fa-github:hover{ color: rgb(255,94,0); font-size: 25px; }
+.fa-bars{ font-size: 25px;}
+nav .logo h1{
   margin: 6px;
   font-size: 25px;
   cursor: pointer;
@@ -80,6 +83,9 @@ nav .logo{
   nav .openMenu{
     display: block;
   }
+  nav .mainMenu li a{
+  font-size: 25px;
+}
   nav .mainMenu li a:hover{
     background: none;
     color:rgb(255,94,0);
