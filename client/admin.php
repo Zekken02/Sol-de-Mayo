@@ -12,11 +12,11 @@
   </head>
   <body>
     <?php include 'navbar.php' ?>
-    <div class="container-fluid">
-      <h2>Añadir producto</h2>
-      <div class="container card">
+    <div class="container-fluid">   
+      <div class="container card mt-4">
+        <h2>Añadir producto</h2>
         <div class="add_prod mt-4 mb-4">
-          <form class="">
+          <form>
             <div class="row">
                 <div class="col-6">
                   <input type="text" class="form-control" name="nombre" placeholder="nombre...">
@@ -66,34 +66,36 @@
           </form>
         </div>
       </div>
-      <h2>Modificar producto</h2>  
-        <div class="row mb-2">
-          <div class="col-3">Area:</div>
-          <div class="col-3">Categoria:</div>
-          <div class="col-3">Marca:</div>
-          <div class="col-3">Buscar:</div>
-          <div class="col-3">
-            <select id="filter_area" class="form-control filter_area">
-              <option value="">todas</option>
-            </select>
+      <div class="container card mt-4">
+        <h2>Modificar producto</h2>  
+          <div class="row mb-2">
+            <div class="col-3">Area:</div>
+            <div class="col-3">Categoria:</div>
+            <div class="col-3">Marca:</div>
+            <div class="col-3">Buscar:</div>
+            <div class="col-3">
+              <select id="filter_area" class="form-control filter_area">
+                <option value="">todas</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <select id="filter_categoria" class="form-control filter_categoria">
+                <option value="">todos</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <select id="filter_marca" class="form-control filter_marca">
+                <option value="">todas</option>
+              </select>
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control prod_search_bar" name="prod_search_bar">
+            </div>
           </div>
-          <div class="col-3">
-            <select id="filter_categoria" class="form-control filter_categoria">
-              <option value="">todos</option>
-            </select>
+          <div class="prod_list">
+            <table id="prod_list" class="table table-striped table-hover prod_table">
+            </table>
           </div>
-          <div class="col-3">
-            <select id="filter_marca" class="form-control filter_marca">
-              <option value="">todas</option>
-            </select>
-          </div>
-          <div class="col-3">
-            <input type="text" class="form-control prod_search_bar" name="prod_search_bar">
-          </div>
-        </div>
-        <div class="prod_list">
-          <table id="prod_list" class="table table-striped table-hover prod_table">
-          </table>
         </div>
       </div>
     </div>
