@@ -18,31 +18,37 @@
         <div class="add_prod mt-4 mb-4">
           <form>
             <div class="row">
-                <div class="col-6">
-                  <input type="text" class="form-control" name="nombre" placeholder="nombre...">
-                </div>
-                <div class="col-6">
-                  <input type="text" class="form-control" name="descripcion" placeholder="descripcion...">
+                <div class="col-12">
+                  <input type="text" class="form-control" id="id_prod" name="id_prod" readonly="readonly" placeholder="id...">
                 </div>
                 <div class="col-12">
                   <br>
                 </div>
                 <div class="col-6">
-                  <input type="text" class="form-control" name="precio" placeholder="precio...">
+                  <input type="text" class="form-control nombre_prod" name="nombre_prod" placeholder="nombre...">
                 </div>
                 <div class="col-6">
-                  <input type="file" class="form-control" name="foto">
+                  <input type="text" class="form-control descripcion_prod" name="descripcion_prod" placeholder="descripcion...">
                 </div>
                 <div class="col-12">
                   <br>
                 </div>
                 <div class="col-6">
-                  <select id="add_area" class="form-control add_area">
+                  <input type="text" class="form-control precio_prod" name="precio_prod" placeholder="precio...">
+                </div>
+                <div class="col-6">
+                  <input type="file" class="form-control foto_prod" name="foto_prod">
+                </div>
+                <div class="col-12">
+                  <br>
+                </div>
+                <div class="col-6">
+                  <select id="add_area" name="area_prod" class="form-control add_area">
                     
                   </select>
                 </div>
                 <div class="col-6">
-                  <select id="add_categoria" class="form-control add_categoria">
+                  <select id="add_categoria" name="categoria_prod" class="form-control add_categoria">
                     
                   </select>
                 </div>
@@ -50,7 +56,7 @@
                   <br>
                 </div>
                 <div class="col-6">
-                  <select id="add_marca" class="form-control add_marca">
+                  <select id="add_marca" name="marca_prod" class="form-control add_marca">
                     
                   </select>
                 </div>
@@ -59,8 +65,10 @@
                 <div class="col-12">
                   <br>
                 </div>
-                <div class="col-12">
-                  <button class="btn btn-primary btn_cargar" value="añadir" name="añadir">Añadir</button>
+                <div class="upload_buttons button-row d-flex">
+                  <div class="col-12">
+                    <button type="submit" formaction="prod_upload.php" class="btn btn_cargar">Añadir</button>
+                  </div>
                 </div>                
             </div>
           </form>

@@ -37,6 +37,65 @@ prod_search_bar.addEventListener('input', function(){
   lista_productos()
 })
 
+//  llamamos al input con el id "id_prod"
+id_prod_bar = document.getElementById("id_prod")
+
+// creamos una funcion para cuando el valor de id_prod cambie
+function id_prod_change(){
+  fetch("http://localhost/github/Sol-de-Mayo/server/productos")
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data);
+              // data = data[0];
+              // console.log(data);
+              const inputNombre = document.querySelector(".nombre_prod");
+              const inputDescripcion = document.querySelector(".descripcion_prod");
+              const inputPrecio = document.querySelector(".precio_prod");
+              const inputFoto = document.querySelector(".foto_prod");
+              const inputArea = document.querySelector(".add_area");
+              const inputCategoria = document.querySelector(".add_categoria");
+              const inputMarca = document.querySelector(".add_marca");
+              
+               // filtra el producto por id
+                 data = data.filter(function(items){
+                 return (items.id == id_prod_bar.value);
+                 });
+                 console.log(data);
+
+              data.map((producto => {
+                inputNombre.value = producto.nombre;
+                inputDescripcion.value = producto.descripcion;
+                inputPrecio.value = producto.precio;
+                inputFoto.value = producto.foto;
+                inputArea.value = producto.id_area;
+                inputCategoria.value = producto.id_categoria;
+                inputMarca.value = producto.id_marca;
+              }))
+            });
+          upload_buttons = document.querySelector(".upload_buttons");
+          upload_buttons.innerHTML="";
+
+          const div_del_upload = document.createElement("div");
+          div_del_upload.className = "col-6";
+          const btn_del_upload = document.createElement("button");
+          btn_del_upload.type = "submit";
+          btn_del_upload.className = "btn btn_cancelar";
+          btn_del_upload.innerText = "Cancelar"
+
+          const div_edit_upload = document.createElement("div");
+          div_edit_upload.className = "col-6";
+          const btn_edit_upload = document.createElement("button");
+          btn_edit_upload.type = "submit";
+          btn_edit_upload.formAction = "prod_edit.php";
+          btn_edit_upload.className = "btn btn_cargar";
+          btn_edit_upload.innerText = "Editar"
+
+          div_del_upload.appendChild(btn_del_upload);
+          upload_buttons.appendChild(div_del_upload);
+          div_edit_upload.appendChild(btn_edit_upload);
+          upload_buttons.appendChild(div_edit_upload);
+}
+
 function filtros_areas() {
           fetch("http://localhost/github/Sol-de-Mayo/server/areas")
           .then((res) => res.json())
@@ -222,9 +281,9 @@ function lista_productos() {
               const n_marca = document.createElement("th");
               n_marca.innerText = producto.n_marca;
               const editar = document.createElement("th");
-              editar.innerHTML = '<a href="#"><i class="fa-solid fa-pen"></i></a>';
+              editar.innerHTML = '<button class="btn btn_edit" id="edit'+ producto.id + '" name"edit"><i class="fa-solid fa-pen"></i></button>';
               const eliminar = document.createElement("th");
-              eliminar.innerHTML = '<a href="#"><i class="fa-solid fa-xmark"></i></a>';
+              eliminar.innerHTML = '<button class="btn btn_del" id="delete'+ producto.id + '" name"delete"><i class="fa-solid fa-trash-can"></i></button>';
 
 
               fila.appendChild(id);
@@ -240,6 +299,22 @@ function lista_productos() {
               fila.appendChild(eliminar);
 
               divDatos.appendChild(fila);
+
+              btnEdit = document.getElementById("edit" + producto.id)
+
+              btnEdit.addEventListener('click', function(){
+                id_prod_bar.value = producto.id
+                id_prod_change()
+              })
+
+              btnDelete = document.getElementById("delete" + producto.id)
+
+              btnDelete.addEventListener('click', function(){
+                var para = new URLSearchParams();
+                para.append("id", producto.id);
+                location.href = "prod_delete.php?" + para.toString();
+              })
+
               }))
             });
         };

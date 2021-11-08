@@ -107,6 +107,50 @@ color: darkblue;
   overflow-x: scroll;
   overflow-y: scroll;
 }
+.btn_cargar{
+  width: 100%!important;
+  background: #76D165!important;
+  border-radius: 5px!important;
+  color: white!important;
+}
+.btn_cargar:hover{
+  background: #539547!important;
+}
+.btn_cancelar{
+  width: 100%!important;
+  background: #F26969!important;
+  border-radius: 5px!important;
+  color: white!important;
+}
+.btn_cancelar:hover{
+  background: #A84B4B!important;
+}
+.btn_edit{
+  width: 100%!important;
+  background: #76D165!important;
+  border-radius: 5px!important;
+  color: white!important;
+}
+.btn_edit:hover{
+  background: #539547!important;
+}
+
+.btn_del{
+  width: 100%!important;
+  background: #F26969!important;
+  border-radius: 5px!important;
+  color: white!important;
+}
+.btn_del:hover{
+  background: #A84B4B!important;
+}
+.container-fluid h2{
+  background: #8CA4F0;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
 .card{
   text-align: center;
 }
